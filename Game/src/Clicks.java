@@ -100,11 +100,53 @@ public class Clicks implements MouseListener{
 		if(roadBuilder){
 			interaction.roadBuilderClicked();
 		}
+		boolean port0=port0(x,y);
+		if(port0){
+			System.out.println("port0");
+			//JuliaE Code
+		}
 		boolean port1=port1(x,y);
 		if(port1){
 			System.out.println("port1");
 			//JuliaE Code
 		}
+		boolean port2=port2(x,y);
+		if(port2){
+			System.out.println("port2");
+			//JuliaE Code
+		}
+		boolean port3=port3(x,y);
+		if(port3){
+			System.out.println("port3");
+			//JuliaE Code
+		}
+		boolean port4=port4(x,y);
+		if(port4){
+			System.out.println("port4");
+			//JuliaE Code
+		}
+		boolean port5=port5(x,y);
+		if(port5){
+			System.out.println("port5");
+			//JuliaE Code
+		}
+		boolean port6=port6(x,y);
+		if(port6){
+			System.out.println("port6");
+			//JuliaE Code
+		}
+		boolean port7=port7(x,y);
+		if(port7){
+			System.out.println("port7");
+			//JuliaE Code
+		}
+		boolean port8=port8(x,y);
+		if(port8){
+			System.out.println("port8");
+			//JuliaE Code
+		}
+
+
 		if(verty<54){
 			interaction.vertexClicked(verty);
 		}
@@ -318,7 +360,7 @@ public class Clicks implements MouseListener{
 			return false;
 		}
 	}
-	public boolean port1(int x, int y){
+	public boolean port0(int x, int y){
 		if(x<210 && x>182 && y<257 && y>236){
 			return true;
 		}
@@ -326,6 +368,73 @@ public class Clicks implements MouseListener{
 			return false;
 		}
 	}
+	public boolean port1(int x, int y){
+		if(x<424 && x>391 && y<132 && y>117){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port2(int x, int y){
+		if(x<664 && x>639 && y<137 && y>116){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port3(int x, int y){
+		if(x<770 && x>742 && y<340 && y>295){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port4(int x, int y){
+		if(x<770 && x>742 && y<576 && y>545){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port5(int x, int y){
+		if(x<664 && x>632 && y<769 && y>749){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port6(int x, int y){
+		if(x<418 && x>389 && y<765 && y>740){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port7(int x, int y){
+		if(x<210 && x>182 && y<646 && y>623){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public boolean port8(int x, int y){
+		if(x<107 && x>78 && y<455 && y>439){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+
+
 	public void mousePressed(MouseEvent e) {}
 
     public void mouseEntered(MouseEvent e) {}

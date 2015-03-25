@@ -16,6 +16,7 @@ public class Player {
 	private DevCards dCardTracker;
 	//settlements and cities and roads are pointed to from the graph
 
+	private boolean printToTerminal = false;
 
 	public Player(int id){
 		playerID = id;
@@ -138,11 +139,15 @@ public class Player {
 
 	public boolean buildSetCheck(){
 		if(resourceTracker.getSheep()<1 || resourceTracker.getWheat()<1 || resourceTracker.getWood()<1 || resourceTracker.getBrick()<1){
-			System.out.println("You do not have enough resources to build a settlement.");
+			if (printToTerminal){
+				System.out.println("You do not have enough resources to build a settlement.");
+			}
 			return false;
 		}
 		if(numberOfSettlements==5){
-			System.out.println("You have already built the maximum number of settlements.");
+			if (printToTerminal){
+				System.out.println("You have already built the maximum number of settlements.");
+			}
 			return false;
 		}
 		return true;
@@ -178,7 +183,9 @@ public class Player {
 
 	public boolean buildDevCheck(){
 		if(resourceTracker.getSheep()<1 || resourceTracker.getWheat()<1 || resourceTracker.getRock()<1){
-			System.out.println("You do not have enough resources to build a development card.");
+			if (printToTerminal){
+				System.out.println("You do not have enough resources to build a development card.");
+			}
 			return false;
 		}
 		return true;
@@ -242,11 +249,15 @@ public class Player {
 
 	public boolean buildCityCheck(){
 		if(resourceTracker.getWheat()<2 || resourceTracker.getRock()<3){
-			System.out.println("You do not have enough resources to build a city.");
+			if (printToTerminal){
+				System.out.println("You do not have enough resources to build a city.");
+			}
 			return false;
 		}
 		if(numberOfSettlements==4){
-			System.out.println("You have already built the maximum number of cities.");
+			if (printToTerminal){
+				System.out.println("You have already built the maximum number of cities.");
+			}
 			return false;
 		}
 		return true;
@@ -261,11 +272,15 @@ public class Player {
 
 	public boolean buildRoadCheck(){
 		if(resourceTracker.getBrick()<1 || resourceTracker.getWood()<1){
-			System.out.println("You do not have enough resources to build a road.");
+			if (printToTerminal){
+				System.out.println("You do not have enough resources to build a road.");
+			}
 			return false;
 		}
 		if(numberOfRoads==15){
-			System.out.println("You have already built the maximum number of roads.");
+			if (printToTerminal){
+				System.out.println("You have already built the maximum number of roads.");
+			}
 			return false;
 		}
 		return true;
@@ -314,32 +329,12 @@ public class Player {
 		return playerID;
 	}
 	
-	public int[] getResourceArray(){
-		//returns an array of the number of each type of resource
-		//using same key as defined by CJ.
-		//index 1 = Rock, index 2 = Wheat, index 3 = Brick, index 4 = wood, index 5 = sheep
-		int[] toReturn = new int[6];
-		toReturn[1] = resourceTracker.getRock();
-		toReturn[2] = resourceTracker.getWheat();
-		toReturn[3] = resourceTracker.getBrick();
-		toReturn[4] = resourceTracker.getWood();
-		toReturn[5] = resourceTracker.getSheep();
-		return toReturn;
-	}
-	
 	public void printStats(){
 		System.out.println("Stats for player: "+playerID);
 		System.out.println("Number of Settlements: " +numberOfSettlements);
 		System.out.println("Number of Cities: " +numberOfCities);
 		System.out.println("Number of Roads: " +numberOfRoads);
 		System.out.println("Victory Points: " +victoryPoints);
-		System.out.println("Resources:");
-		int[] resources = getResourceArray();
-		System.out.println("Num Rock: "+resources[1]);
-		System.out.println("Num Wheat: "+resources[2]);
-		System.out.println("Num Brick: "+resources[3]);
-		System.out.println("Num Wood: "+resources[4]);
-		System.out.println("Num Sheep: "+resources[5]);
 	}
 	
 	//method for testing
